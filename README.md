@@ -1,0 +1,1 @@
+The Library Management System is a Java project that uses OOP principles for managing books, magazines, and newspapers. It uses abstraction, inheritance, and polymorphism to create this system. This project helps beginners apply core Java concepts in a practical context.
