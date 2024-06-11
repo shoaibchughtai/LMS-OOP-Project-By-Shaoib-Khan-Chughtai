@@ -1,0 +1,74 @@
+// LibraryItem (Abstract Class)
+abstract class LibraryItem {
+    String title;
+    String id;
+    int numberOfCopiesAvailable;
+
+    LibraryItem(String title, String id, int numberOfCopiesAvailable) {
+        this.title = title;
+        this.id = id;
+        this.numberOfCopiesAvailable = numberOfCopiesAvailable;
+    }
+
+    abstract void displayDetails();
+}
+
+// Book (Subclass)
+class Book extends LibraryItem {
+    String author;
+
+    Book(String title, String id, String author, int numberOfCopiesAvailable) {
+        super(title, id, numberOfCopiesAvailable);
+        this.author = author;
+    }
+
+    @Override
+    void displayDetails() {
+        System.out.println("Book Title: " + title + ", ID: " + id + ", Author: " + author + ", Copies Available: " + numberOfCopiesAvailable);
+    }
+}
+
+// Magazine (Subclass)
+class Magazine extends LibraryItem {
+    int issueNumber;
+
+    Magazine(String title, String id, int issueNumber, int numberOfCopiesAvailable) {
+        super(title, id, numberOfCopiesAvailable);
+        this.issueNumber = issueNumber;
+    }
+
+    @Override
+    void displayDetails() {
+        System.out.println("Magazine Title: " + title + ", ID: " + id + ", Issue Number: " + issueNumber + ", Copies Available: " + numberOfCopiesAvailable);
+    }
+}
+
+// Newspaper (Subclass)
+class Newspaper extends LibraryItem {
+    String publicationDate;
+
+    Newspaper(String title, String id, String publicationDate, int numberOfCopiesAvailable) {
+        super(title, id, numberOfCopiesAvailable);
+        this.publicationDate = publicationDate;
+    }
+
+    @Override
+    void displayDetails() {
+        System.out.println("Newspaper Title: " + title + ", ID: " + id + ", Publication Date: " + publicationDate + ", Copies Available: " + numberOfCopiesAvailable);
+    }
+}
+
+// Library Management System (Main Class)
+public class LibraryManagementSystem {
+    public static void main(String[] args) {
+        LibraryItem book = new Book("Java Programming", "B001", "John Doe", 5);
+        LibraryItem magazine = new Magazine("Tech Monthly", "M001", 45, 7);
+        LibraryItem newspaper = new Newspaper("Daily News", "N001", "2024-06-05", 10);
+
+        book.displayDetails();
+        magazine.displayDetails();
+        newspaper.displayDetails();
+    }
+}
+
+//Shaoib Khan Chughtai
